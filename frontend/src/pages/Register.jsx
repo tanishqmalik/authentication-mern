@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from "axios"
+import { Link } from 'react-router-dom'
 
 const Register = () => {
 
@@ -22,6 +23,7 @@ const Register = () => {
     }
 
   return (
+    <>
     <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-10 p-4 shadow-lg">
       <h2 className="text-2xl mb-4">Register</h2>
       <input type="text" name="name" placeholder="Name" className="mb-2 w-full p-2 border" onChange={handleChange} />
@@ -29,6 +31,12 @@ const Register = () => {
       <input type="password" name="password" placeholder="Password" className="mb-2 w-full p-2 border" onChange={handleChange} />
       <button className="bg-blue-500 text-white px-4 py-2">Register</button>
     </form>
+
+    <p className="mt-2">
+        Already have an account?
+        <Link to="/login" className="text-blue-500 underline">Login</Link>
+      </p>
+    </>
   )
 }
 
